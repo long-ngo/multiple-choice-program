@@ -7,14 +7,8 @@
     text-align: center;
 }
 
-.question__list {
-    list-style: none;
-} 
-
-.btn {
-    min-width: 100px;
-    height: 50px;
-    border-radius: 5px;
+.question__list-item {
+    margin-top: 20px;
 }
 
 .question__show {
@@ -22,4 +16,8 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+}
+
+.question__list-item-choose-question {
+    margin-left: 10px;
 }

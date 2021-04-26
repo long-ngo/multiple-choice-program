@@ -1,4 +1,6 @@
 import { Component } from 'react';
+//import { Modal, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Question.css';
 
 class Question extends Component {
@@ -27,7 +29,7 @@ class Question extends Component {
                     C: 'Thứ sáu',
                     D: 'Thứ năm'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 3',
@@ -51,7 +53,7 @@ class Question extends Component {
                     C: 'Thứ sáu',
                     D: 'Thứ tư'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 5',
@@ -74,7 +76,7 @@ class Question extends Component {
                     C: '5208, 5272, 5369, 5414',
                     D: '6925, 6924, 6923, 6922'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'C'
             },
             {
                 name: 'Câu 7',
@@ -85,7 +87,7 @@ class Question extends Component {
                     C: 'Tháng 8, tháng 10, tháng 12',
                     D: 'Cả 2 ý A và C đúng'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 8',
@@ -96,7 +98,7 @@ class Question extends Component {
                     C: '8 cm',
                     D: '7 cm2'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'B'
             },
             {
                 name: 'Câu 9',
@@ -107,7 +109,7 @@ class Question extends Component {
                     C: '175cm2',
                     D: '175cm'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'C'
             },
             {
                 name: 'Câu 10',
@@ -118,7 +120,7 @@ class Question extends Component {
                     C: '942 cm',
                     D: '942 cm2'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 11',
@@ -129,7 +131,7 @@ class Question extends Component {
                     C: '532 cm2 - 62 cm2 > 30 cm2 x 9',
                     D: '46 cm2 x 3 < 36 cm2 x 4'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'C'
             },
             {
                 name: 'Câu 12',
@@ -141,7 +143,7 @@ class Question extends Component {
                     C: '8 cm',
                     D: '9 cm'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'C'
             },
             {
                 name: 'Câu 13',
@@ -153,18 +155,19 @@ class Question extends Component {
                     C: '36 cm2',
                     D: '48 cm2'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'B'
             },
             {
                 name: 'Câu 14',
-                title: 'Chọn câu đúng',
+                title:
+                    'Diện tích của hình vuông là 16cm2. Cạnh của hình vuông bằng:',
                 choose: {
-                    A: '',
-                    B: '',
-                    C: '',
-                    D: ''
+                    A: '7 cm',
+                    B: '8 cm',
+                    C: '9 cm',
+                    D: '10 cm'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'B'
             },
             {
                 name: 'Câu 15',
@@ -175,7 +178,7 @@ class Question extends Component {
                     C: '49999',
                     D: '99999'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 16',
@@ -187,7 +190,7 @@ class Question extends Component {
                     C: '42 con',
                     D: '336 con'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'B'
             },
             {
                 name: 'Câu 17',
@@ -209,7 +212,7 @@ class Question extends Component {
                     C: '5',
                     D: '8'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 19',
@@ -220,7 +223,7 @@ class Question extends Component {
                     C: 'Thương nhân với số chia',
                     D: 'Số chia chia cho thương'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'C'
             },
             {
                 name: 'Câu 20',
@@ -231,18 +234,19 @@ class Question extends Component {
                     C: 'Ta lấy chiều dài nhân với chiều rộng (cùng đơn vị đo)',
                     D: 'Ta chiều dài chia chiều rộng'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'C'
             },
             {
                 name: 'Câu 21',
-                title: 'Cho hình vẽ bên:',
+                title: 'Muốn tính chu vi hình chữ nhật ta lấy:',
                 choose: {
-                    A: 'Diện tích hình 1 bằng diện tích hình 2',
-                    B: 'Diện tích hình 2 lớn hơn hình 1',
-                    C: 'Diện tích hình 1 gấp 2 lần hình 2',
-                    D: 'Diện tích hình 2 gấp 2 lần hình 1'
+                    A: 'Chiều dài cộng chiều rộng',
+                    B: 'Chiều dài nhân chiều rộng',
+                    C: 'Chiều dài cộng chiều rộng tất cả chia hai',
+                    D:
+                        'Chiều dài cộng chiều rộng cộng chiều dài cộng chiều rộng'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 22',
@@ -254,65 +258,83 @@ class Question extends Component {
                     C: '99',
                     D: '297'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'B'
             },
             {
                 name: 'Câu 23',
                 title:
-                    'Trong các phép chia có dư, số chia là 4 thì số dư có thể là nhưng số:',
+                    'Trong các phép chia có dư, số chia là 4 thì số dư có thể là những số:',
                 choose: {
                     A: '1',
                     B: '2',
                     C: '3',
                     D: 'Tất cả các số 1, 2, 3'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 24',
-                title: 'Chu vi hình vuông là 172 cm, cạnh hình vuôn là:',
+                title: 'Chu vi hình vuông là 172 cm, cạnh hình vuông là:',
                 choose: {
                     A: '86 cm',
                     B: '43 cm',
                     C: '128 cm',
                     D: '32 cm'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'B'
             },
             {
                 name: 'Câu 25',
-                title: 'Cạnh hình vuông có chu vi 96 cm là',
+                title: 'Cạnh hình vuông có chu vi 96 cm là:',
                 choose: {
                     A: '48 cm',
                     B: '8 cm',
                     C: '6 cm',
                     D: '24 cm'
                 },
-                correctAnswer: 'A'
+                correctAnswer: 'D'
             }
         ];
 
         this.state = {
             scores: 0,
             wrongSentence: 0,
-            time: 0
+            disabled: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        //this.handleClose = this.handleClose.bind(this);
+        //this.handleShow = this.handleShow.bind(this);
     }
 
     handleSubmit(event) {
-        const answer = this.data.filter((dataItem) => {
-            return event.target.elements[dataItem.name].value === dataItem.correctAnswer;
-        });
-
-        this.setState({
-            scores: (10 / this.data.length * answer.length).toFixed(1),
-            wrongSentence: this.data.length - answer.length
-        });
+        if(window.confirm("Con có chắc muốn nộp bài không?")) {
+            const answer = this.data.filter((dataItem) => {
+                return (
+                    event.target.elements[dataItem.name].value ===
+                    dataItem.correctAnswer
+                );
+            });
+    
+            this.setState({
+                scores: ((10 / this.data.length) * answer.length).toFixed(1),
+                wrongSentence: this.data.length - answer.length,
+                disabled: true
+            });
+        }
 
         event.preventDefault();
     }
+
+    // handleClose(e) {
+    //     this.setState({ show: false });
+        
+    // }
+
+    // handleShow(e) {
+    //     this.setState({ show: true });
+    //     e.preventDefault();
+    // }
 
     render() {
         return (
@@ -324,9 +346,9 @@ class Question extends Component {
                     {this.data.map((question, key) => {
                         return (
                             <div className="question__list-item" key={key}>
-                                <p className="question__list-item-title">
-                                    {question.name} {question.title}
-                                </p>
+                                <div className="question__list-item-title">
+                                    Câu {key + 1} {question.title}
+                                </div>
 
                                 <div className="question__list-item-choose">
                                     <input
@@ -334,7 +356,9 @@ class Question extends Component {
                                         name={question.name}
                                         value="A"
                                     ></input>
-                                    A. {question.choose.A}
+                                    <span className="question__list-item-choose-question">
+                                        A. {question.choose.A}
+                                    </span>
                                 </div>
 
                                 <div className="question__list-item-choose">
@@ -343,7 +367,9 @@ class Question extends Component {
                                         name={question.name}
                                         value="B"
                                     ></input>
-                                    B. {question.choose.B}
+                                    <span className="question__list-item-choose-question">
+                                        B. {question.choose.B}
+                                    </span>
                                 </div>
 
                                 <div className="question__list-item-choose">
@@ -352,7 +378,9 @@ class Question extends Component {
                                         name={question.name}
                                         value="C"
                                     ></input>
-                                    C. {question.choose.C}
+                                    <span className="question__list-item-choose-question">
+                                        C. {question.choose.C}
+                                    </span>
                                 </div>
 
                                 <div className="question__list-item-choose">
@@ -361,14 +389,22 @@ class Question extends Component {
                                         name={question.name}
                                         value="D"
                                     ></input>
-                                    D. {question.choose.D}
+                                    <span className="question__list-item-choose-question">
+                                        D. {question.choose.D}
+                                    </span>
                                 </div>
                             </div>
                         );
                     })}
 
                     <div className="question__show">
-                        <button className="btn question__show-submit" type="submit">
+                        <button
+                            className="btn btn-primary question__show-submit"
+                            type="submit"
+                            variant="primary"
+                            disabled={this.state.disabled}
+                            // onClick={this.handleShow}
+                        >
                             Nộp bài
                         </button>
                         <div className="question__show-result">
@@ -377,6 +413,23 @@ class Question extends Component {
                         </div>
                     </div>
                 </form>
+
+                {/* <Modal show={this.state.show} onHide={this.handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Nộp bài</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        Con có chắc muốn nộp bài không?
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.handleClose}>
+                            Để con nghĩ lại
+                        </Button>
+                        <Button variant="primary" onClick={this.handleSubmit}>
+                            Vâng
+                        </Button>
+                    </Modal.Footer>
+                </Modal> */}
             </div>
         );
     }
