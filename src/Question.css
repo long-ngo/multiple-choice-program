@@ -1,0 +1,23 @@
+.question {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.question__heading {
+    text-align: center;
+}
+
+.question__list {
+    list-style: none;
+} 
+
+.btn {
+    min-width: 30px;
+    border-radius: 5px;
+}
+
+.question__show {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
