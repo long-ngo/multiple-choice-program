@@ -306,7 +306,6 @@ class Question extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         //this.handleClose = this.handleClose.bind(this);
         //this.handleShow = this.handleShow.bind(this);
-
     }
 
     handleSubmit(event) {
@@ -340,87 +339,92 @@ class Question extends Component {
     render() {
         return (
             <div className="question">
-                <h2 className="question__heading">
-                    Trắc nghiệm ôn tập toán lớp 3
-                </h2>
-                <h5 className="alert-danger p-3">
-                    Làm bài bĩnh tĩnh chúc con may mắn - Không làm được 9 điểm
-                    khỏi coi phim khỏi coi phim con nhé :))
-                </h5>
-                <form className="question__list" onSubmit={this.handleSubmit}>
-                    {this.data.map((question, key) => {
-                        return (
-                            <div className="question__list-item" key={key}>
-                                <div className="question__list-item-title">
-                                    Câu {key + 1} {question.title}
-                                </div>
+                <div className="container">
+                    <h2 className="question__heading">
+                        Trắc nghiệm ôn tập toán lớp 3
+                    </h2>
+                    <h5 className="alert-danger p-3">
+                        Làm bài bĩnh tĩnh chúc con may mắn - Không làm được 9
+                        điểm khỏi coi phim khỏi coi phim con nhé :))
+                    </h5>
+                    <form
+                        className="question__list"
+                        onSubmit={this.handleSubmit}
+                    >
+                        {this.data.map((question, key) => {
+                            return (
+                                <div className="question__list-item" key={key}>
+                                    <div className="question__list-item-title">
+                                        Câu {key + 1} {question.title}
+                                    </div>
 
-                                <div className="question__list-item-choose">
-                                    <input
-                                        type="radio"
-                                        name={question.name}
-                                        value="A"
-                                    ></input>
-                                    <span className="question__list-item-choose-question">
-                                        A. {question.choose.A}
-                                    </span>
-                                </div>
+                                    <div className="question__list-item-choose">
+                                        <input
+                                            type="radio"
+                                            name={question.name}
+                                            value="A"
+                                        ></input>
+                                        <span className="question__list-item-choose-question">
+                                            A. {question.choose.A}
+                                        </span>
+                                    </div>
 
-                                <div className="question__list-item-choose">
-                                    <input
-                                        type="radio"
-                                        name={question.name}
-                                        value="B"
-                                    ></input>
-                                    <span className="question__list-item-choose-question">
-                                        B. {question.choose.B}
-                                    </span>
-                                </div>
+                                    <div className="question__list-item-choose">
+                                        <input
+                                            type="radio"
+                                            name={question.name}
+                                            value="B"
+                                        ></input>
+                                        <span className="question__list-item-choose-question">
+                                            B. {question.choose.B}
+                                        </span>
+                                    </div>
 
-                                <div className="question__list-item-choose">
-                                    <input
-                                        type="radio"
-                                        name={question.name}
-                                        value="C"
-                                    ></input>
-                                    <span className="question__list-item-choose-question">
-                                        C. {question.choose.C}
-                                    </span>
-                                </div>
+                                    <div className="question__list-item-choose">
+                                        <input
+                                            type="radio"
+                                            name={question.name}
+                                            value="C"
+                                        ></input>
+                                        <span className="question__list-item-choose-question">
+                                            C. {question.choose.C}
+                                        </span>
+                                    </div>
 
-                                <div className="question__list-item-choose">
-                                    <input
-                                        type="radio"
-                                        name={question.name}
-                                        value="D"
-                                    ></input>
-                                    <span className="question__list-item-choose-question">
-                                        D. {question.choose.D}
-                                    </span>
+                                    <div className="question__list-item-choose">
+                                        <input
+                                            type="radio"
+                                            name={question.name}
+                                            value="D"
+                                        ></input>
+                                        <span className="question__list-item-choose-question">
+                                            D. {question.choose.D}
+                                        </span>
+                                    </div>
                                 </div>
+                            );
+                        })}
+
+                        <div className="question__show">
+                            <button
+                                className="btn btn-primary question__show-submit"
+                                type="submit"
+                                variant="primary"
+                                disabled={this.state.disabled}
+                            >
+                                Nộp bài
+                            </button>
+                            <div className="question__show-result">
+                                <p className="alert-info p-2">
+                                    Số câu sai: {this.state.wrongSentence}
+                                </p>
+                                <p className="alert-info p-2">
+                                    Điểm: {this.state.scores}
+                                </p>
                             </div>
-                        );
-                    })}
-
-                    <div className="question__show">
-                        <button
-                            className="btn btn-primary question__show-submit"
-                            type="submit"
-                            variant="primary"
-                            disabled={this.state.disabled}
-                        >
-                            Nộp bài
-                        </button>
-                        <div className="question__show-result">
-                            <p className="alert-info p-2">
-                                Số câu sai: {this.state.wrongSentence}
-                            </p>
-                            <p className="alert-info p-2">
-                                Điểm: {this.state.scores}
-                            </p>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
 
                 {/* <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
