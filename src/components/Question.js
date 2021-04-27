@@ -13,7 +13,7 @@ class Question extends Component {
                     'Trong các độ dài 5000mm, 50m, 500cm, 5dm độ dài lớn nhất là:',
                 choose: {
                     A: '50m',
-                    B: '5000m',
+                    B: '5000mm',
                     C: '5dm',
                     D: '300cm'
                 },
@@ -160,14 +160,14 @@ class Question extends Component {
             {
                 name: 'Câu 14',
                 title:
-                    'Diện tích của hình vuông là 16cm2. Cạnh của hình vuông bằng:',
+                    'Diện tích của hình vuông là 49cm2. Cạnh của hình vuông bằng:',
                 choose: {
-                    A: '7 cm',
-                    B: '8 cm',
-                    C: '9 cm',
-                    D: '10 cm'
+                    A: '7cm',
+                    B: '8cm',
+                    C: '9cm',
+                    D: '10cm'
                 },
-                correctAnswer: 'B'
+                correctAnswer: 'A'
             },
             {
                 name: 'Câu 15',
@@ -299,23 +299,25 @@ class Question extends Component {
         this.state = {
             scores: 0,
             wrongSentence: 0,
-            disabled: false
+            disabled: false,
+            show: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         //this.handleClose = this.handleClose.bind(this);
         //this.handleShow = this.handleShow.bind(this);
+
     }
 
     handleSubmit(event) {
-        if(window.confirm("Con có chắc muốn nộp bài không?")) {
+        if (window.confirm('Con có chắc muốn nộp bài không?')) {
             const answer = this.data.filter((dataItem) => {
                 return (
                     event.target.elements[dataItem.name].value ===
                     dataItem.correctAnswer
                 );
             });
-    
+
             this.setState({
                 scores: ((10 / this.data.length) * answer.length).toFixed(1),
                 wrongSentence: this.data.length - answer.length,
@@ -326,9 +328,8 @@ class Question extends Component {
         event.preventDefault();
     }
 
-    // handleClose(e) {
+    // handleClose() {
     //     this.setState({ show: false });
-        
     // }
 
     // handleShow(e) {
@@ -342,6 +343,10 @@ class Question extends Component {
                 <h2 className="question__heading">
                     Trắc nghiệm ôn tập toán lớp 3
                 </h2>
+                <h5 className="alert-danger p-3">
+                    Làm bài bĩnh tĩnh chúc con may mắn - Không làm được 9 điểm
+                    khỏi coi phim khỏi coi phim con nhé :))
+                </h5>
                 <form className="question__list" onSubmit={this.handleSubmit}>
                     {this.data.map((question, key) => {
                         return (
@@ -403,13 +408,16 @@ class Question extends Component {
                             type="submit"
                             variant="primary"
                             disabled={this.state.disabled}
-                            // onClick={this.handleShow}
                         >
                             Nộp bài
                         </button>
                         <div className="question__show-result">
-                            <p>Điểm: {this.state.scores}</p>
-                            <p>Số câu sai: {this.state.wrongSentence}</p>
+                            <p className="alert-info p-2">
+                                Số câu sai: {this.state.wrongSentence}
+                            </p>
+                            <p className="alert-info p-2">
+                                Điểm: {this.state.scores}
+                            </p>
                         </div>
                     </div>
                 </form>
@@ -425,7 +433,7 @@ class Question extends Component {
                         <Button variant="secondary" onClick={this.handleClose}>
                             Để con nghĩ lại
                         </Button>
-                        <Button variant="primary" onClick={this.handleSubmit}>
+                        <Button variant="primary" onClick={this.handleClose}>
                             Vâng
                         </Button>
                     </Modal.Footer>
