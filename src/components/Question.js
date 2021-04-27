@@ -345,7 +345,7 @@ class Question extends Component {
                     </h2>
                     <h5 className="alert-danger p-3">
                         Làm bài bĩnh tĩnh chúc con may mắn - Không làm được 9
-                        điểm khỏi coi phim khỏi coi phim con nhé :))
+                        điểm khỏi coi phim con nhé :))
                     </h5>
                     <form
                         className="question__list"
