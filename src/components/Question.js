@@ -303,38 +303,55 @@ class Question extends Component {
             show: false
         };
 
+        //this.formRef = createRef();
+
         this.handleSubmit = this.handleSubmit.bind(this);
         //this.handleClose = this.handleClose.bind(this);
         //this.handleShow = this.handleShow.bind(this);
+        //this.handleResult = this.handleResult.bind(this);
     }
 
-    handleSubmit(event) {
+    handleSubmit(e) {
+        this.handleShow();
         if (window.confirm('Con có chắc muốn nộp bài không?')) {
-            const answer = this.data.filter((dataItem) => {
-                return (
-                    event.target.elements[dataItem.name].value ===
-                    dataItem.correctAnswer
-                );
-            });
+        const answer = this.data.filter((dataItem) => {
+            return (
+                e.target.elements[dataItem.name].value ===
+                dataItem.correctAnswer
+            );
+        });
 
-            this.setState({
-                scores: ((10 / this.data.length) * answer.length).toFixed(1),
-                wrongSentence: this.data.length - answer.length,
-                disabled: true
-            });
+        this.setState({
+            scores: ((10 / this.data.length) * answer.length).toFixed(1),
+            wrongSentence: this.data.length - answer.length,
+            disabled: true
+        });
         }
-
-        event.preventDefault();
+        e.preventDefault();
     }
 
-    // handleClose() {
-    //     this.setState({ show: false });
-    // }
+    handleClose() {
+        this.setState({ show: false });
+    }
 
-    // handleShow(e) {
-    //     this.setState({ show: true });
-    //     e.preventDefault();
-    // }
+    handleShow() {
+        this.setState({ show: true });
+    }
+
+    handleResult() {
+        this.handleClose();
+
+        const formTarget = this.formRef.current.elements;
+        const answer = this.data.filter((dataItem) => {
+            return formTarget[dataItem.name].value === dataItem.correctAnswer;
+        });
+
+        this.setState({
+            scores: ((10 / this.data.length) * answer.length).toFixed(1),
+            wrongSentence: this.data.length - answer.length,
+            disabled: true
+        });
+    }
 
     render() {
         return (
@@ -349,6 +366,7 @@ class Question extends Component {
                     <form
                         className="question__list"
                         onSubmit={this.handleSubmit}
+                        //ref={this.formRef}
                     >
                         {this.data.map((question, key) => {
                             return (
@@ -408,7 +426,6 @@ class Question extends Component {
                             <button
                                 className="btn btn-primary question__show-submit"
                                 type="submit"
-                                variant="primary"
                                 disabled={this.state.disabled}
                             >
                                 Nộp bài
@@ -429,14 +446,12 @@ class Question extends Component {
                     <Modal.Header closeButton>
                         <Modal.Title>Nộp bài</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
-                        Con có chắc muốn nộp bài không?
-                    </Modal.Body>
+                    <Modal.Body>Con có chắc muốn nộp bài không?</Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.handleClose}>
                             Để con nghĩ lại
                         </Button>
-                        <Button variant="primary" onClick={this.handleClose}>
+                        <Button variant="primary" onClick={this.handleResult}>
                             Vâng
                         </Button>
                     </Modal.Footer>
