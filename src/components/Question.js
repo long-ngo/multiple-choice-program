@@ -293,17 +293,6 @@ class Question extends Component {
                     D: '24 cm'
                 },
                 correctAnswer: 'D'
-            },
-            {
-                name: 'Câu 26',
-                title: 'Bé Đen học dở đúng không?',
-                choose: {
-                    A: 'Đúng',
-                    B: 'Sai',
-                    C: 'Rất sai',
-                    D: 'Rất đúng'
-                },
-                correctAnswer: 'D'
             }
         ];
 
