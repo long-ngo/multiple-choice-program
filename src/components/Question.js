@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 //import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Question.css';
@@ -311,32 +311,39 @@ class Question extends Component {
             scores: 0,
             wrongSentence: 0,
             disabled: false,
-            show: false
+            show: false,
+            time: this.data.length * 60 * 1000
         };
 
-        //this.formRef = createRef();
+        this.formRef = createRef();
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        //this.handleClose = this.handleClose.bind(this);
-        //this.handleShow = this.handleShow.bind(this);
-        //this.handleResult = this.handleResult.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.handleShow = this.handleShow.bind(this);
+        this.handleResult = this.handleResult.bind(this);
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.handleResult();
+        }, this.state.time);
     }
 
     handleSubmit(e) {
         this.handleShow();
         if (window.confirm('Con có chắc muốn nộp bài không?')) {
-        const answer = this.data.filter((dataItem) => {
-            return (
-                e.target.elements[dataItem.name].value ===
-                dataItem.correctAnswer
-            );
-        });
+            const answer = this.data.filter((dataItem) => {
+                return (
+                    e.target.elements[dataItem.name].value ===
+                    dataItem.correctAnswer
+                );
+            });
 
-        this.setState({
-            scores: ((10 / this.data.length) * answer.length).toFixed(1),
-            wrongSentence: this.data.length - answer.length,
-            disabled: true
-        });
+            this.setState({
+                scores: ((10 / this.data.length) * answer.length).toFixed(1),
+                wrongSentence: this.data.length - answer.length,
+                disabled: true
+            });
         }
         e.preventDefault();
     }
@@ -377,7 +384,7 @@ class Question extends Component {
                     <form
                         className="question__list"
                         onSubmit={this.handleSubmit}
-                        //ref={this.formRef}
+                        ref={this.formRef}
                     >
                         {this.data.map((question, key) => {
                             return (
