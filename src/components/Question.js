@@ -333,26 +333,31 @@ class Question extends Component {
 
     handleSubmit(e) {
         //this.handleShow();
+        e.preventDefault();
+
+        const answer = this.data.map(dataItem => {
+            return e.target.elements[dataItem.name].value;
+        });
+
+        if (!answer.every(answerItem => answerItem)) {
+            window.alert('Đừng gian lận con nhé :))');
+            return;
+        }
+
         if (window.confirm('Con có chắc muốn nộp bài không?')) {
-            const answer = this.data.filter((dataItem) => {
+            const rightAnswer = this.data.filter((dataItem) => {
                 return (
                     e.target.elements[dataItem.name].value ===
                     dataItem.correctAnswer
                 );
             });
 
-            if (answer.length === this.data.length) {
-                this.setState({
-                    scores: ((10 / this.data.length) * answer.length).toFixed(1),
-                    wrongSentence: this.data.length - answer.length,
-                    disabled: true
-                });
-            }
-            else {
-                window.alert('Đừng gian lận con nhé :))')
-            }
+            this.setState({
+                scores: ((10 / this.data.length) * rightAnswer.length).toFixed(1),
+                wrongSentence: this.data.length - rightAnswer.length,
+                disabled: true
+            });
         }
-        e.preventDefault();
     }
 
     handleClose() {
