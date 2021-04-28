@@ -332,7 +332,7 @@ class Question extends Component {
     }
 
     handleSubmit(e) {
-        this.handleShow();
+        //this.handleShow();
         if (window.confirm('Con có chắc muốn nộp bài không?')) {
             const answer = this.data.filter((dataItem) => {
                 return (
@@ -341,11 +341,16 @@ class Question extends Component {
                 );
             });
 
-            this.setState({
-                scores: ((10 / this.data.length) * answer.length).toFixed(1),
-                wrongSentence: this.data.length - answer.length,
-                disabled: true
-            });
+            if (answer.length === this.data.length) {
+                this.setState({
+                    scores: ((10 / this.data.length) * answer.length).toFixed(1),
+                    wrongSentence: this.data.length - answer.length,
+                    disabled: true
+                });
+            }
+            else {
+                window.alert('Đừng gian lận con nhé :))')
+            }
         }
         e.preventDefault();
     }
