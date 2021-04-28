@@ -325,7 +325,9 @@ class Question extends Component {
 
     componentDidMount() {
         setTimeout(() => {
-            this.handleResult();
+            if(!this.state.disabled) {
+                this.handleResult();
+            }
         }, this.state.time);
     }
 
