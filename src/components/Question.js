@@ -329,7 +329,7 @@ class Question extends Component {
         });
 
         if (!answer.every(answerItem => answerItem)) {
-            window.alert('Đừng gian lận con nhé :))');
+            window.alert('Chọn hết mới cho nộp con ạ :))');
             return;
         }
 
