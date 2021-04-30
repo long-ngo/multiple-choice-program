@@ -402,7 +402,7 @@ class Question extends Component {
                         Trắc nghiệm ôn tập toán lớp 3
                     </h2>
                     <h5 className="alert-danger p-3">
-                        Làm không được 9 điểm khỏi chơi điện thoại con nhé :))
+                        Làm không được 10 điểm khỏi chơi điện thoại con nhé :))
                     </h5>
                     <form
                         className="question__list"
