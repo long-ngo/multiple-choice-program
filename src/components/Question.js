@@ -296,25 +296,25 @@ class Question extends Component {
             },
             {
                 name: 'Câu 26',
-                title: ' Lớp trưởng chỉ huy cả lớp xếp hàng. Cả lớp xếp được 4 hàng, mỗi hàng có 7 bạn. Hỏi lớp đó có bao nhiêu học sinh?',
+                title: ' Lớp trưởng chỉ huy cả lớp xếp hàng. Cả lớp xếp được 4 hàng, mỗi hàng có 7 bạn và có 2 bạn đã nghỉ học. Hỏi lớp đó có bao nhiêu học sinh?',
                 choose: {
                     A: '27 học sinh',
                     B: '28 học sinh',
                     C: '29 học sinh',
                     D: '30 học sinh'
                 },
-                correctAnswer: 'B'
+                correctAnswer: 'D'
             },
             {
                 name: 'Câu 27',
-                title: '  Nếu lấy số lớn nhất có 4 chữ số khác nhau trừ đi số chẵn nhỏ nhất có 4 chữ số giống nhau thì được hiệu là',
+                title: 'Nếu lấy số lớn nhất có 5 chữ số khác nhau trừ đi số chẵn nhỏ nhất có 4 chữ số giống nhau thì được hiệu là',
                 choose: {
-                    A: '7652',
-                    B: '7653',
-                    C: '7654',
-                    D: '7655'
+                    A: '96541',
+                    B: '96542',
+                    C: '96544',
+                    D: '96543'
                 },
-                correctAnswer: 'C'
+                correctAnswer: 'D'
             }
         ];
 
